@@ -42,34 +42,47 @@
 </head>
 <body>
 
-<div ng-app="app" class="app">
-    <div ng-controller="FormController as ctrl">
-        <h5>Register</h5>
+    <div ng-app="app" class="app">
+        <div ng-controller="FormController as ctrl">
+            <h5>Register</h5>
 
-        <form name="form">
-            <label>Name</label>
+            <form name="form">
+                <label>Name</label>
 
-            <input
+                <input
                     name="name"
                     minlength="2"
                     ng-model="ctrl.name"
                     required="required" />
 
-            <label>Coupon Code</label>
+                {{ ctrl.name }}
 
-            <input
+                <br />
+
+                <label>Coupon Code</label>
+
+                <input
+                    make-lower
+                    coupon-code
                     name="coupon"
-                    minlength="8"
                     ng-model="ctrl.coupon"
                     required="required" />
-        </form>
-    </div>
-</div>
 
-<script src="js/angular.js"></script>
-<script src="js/angular-messages.js"></script>
-<script src="js/app/app.js"></script>
-<script src="js/app/controllers/FormController.js"></script>
+                <div ng-if="form.coupon.$error.coupon">
+                    Coupon code is incorrect!
+                </div>
+
+                {{ ctrl.coupon }}
+            </form>
+        </div>
+    </div>
+
+    <script src="js/angular.js"></script>
+    <script src="js/angular-messages.js"></script>
+    <script src="js/app/app.js"></script>
+    <script src="js/app/controllers/FormController.js"></script>
+    <script src="js/app/directives/makeLower.js"></script>
+    <script src="js/app/directives/couponCode.js"></script>
 
 </body>
 </html>
