@@ -9,6 +9,6 @@
 
 In this repo we've got a sign up form. This requires the user's name, and their coupon code.
 
-Using `$parsers` and `$formatters`, ensure that the coupon is always displayed in uppercase in the view, but stored in lowercase in the model.
+Using `$parsers` and `$formatters`, ensure that the coupon is always displayed in lowercase in the view, no matter what case we type in.
 
-We also need to make sure the coupon code is correct. This should conform to the regular expression `/\\d{2}[a-z]{4}\\d{2}/i` (two digits, then 4 characters, then 2 digits).
+We also need to make sure the coupon code is correct. This should conform to the regular expression `/\d{2}[a-z]{4}\d{2}/i` (two digits, then 4 characters, then 2 digits).
